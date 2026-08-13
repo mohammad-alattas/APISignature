@@ -25,12 +25,6 @@ From [malapi.io](https://malapi.io), curated by mr.d0x and contributors.
 
 This project is not affiliated with or endorsed by malapi.io.
 
-### API combination rules
-
-From [mandiant/capa-rules](https://github.com/mandiant/capa-rules), licensed
-under the Apache License 2.0. Rules are transformed at build time into a
-compact feature-program representation; the logic they express is unchanged.
-
 ## Vendored source code
 
 ### SQLite
