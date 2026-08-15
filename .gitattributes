@@ -1,0 +1,16 @@
+# Normalise line endings so a checkout on Linux and one on Windows do not show
+# every file as modified. Without this, the first clone on another OS produces a
+# diff touching every line of every file.
+* text=auto
+
+# Windows tooling that is happiest with CRLF.
+*.ps1  text eol=crlf
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# Shipped as-is; never line-ending converted.
+*.db   binary
+*.zip  binary
+*.dp32 binary
+*.dp64 binary
+*.png  binary

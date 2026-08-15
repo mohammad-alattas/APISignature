@@ -1,0 +1,469 @@
+{
+  "_doc": "Shared contract for etl/normalize.py and src/normalize.cpp. Both implementations must produce exactly these results. Change this table first, then both sides.",
+  "_fields": {
+    "raw": "input as x64dbg would present it",
+    "module": "normalized module, null when unknown or an apiset stub",
+    "function": "undecorated function name, empty when unresolvable",
+    "ordinal": "ordinal for #N exports",
+    "is_apiset": "true when the module was an api-ms-win-/ext-ms-win- stub",
+    "keys": "ordered lookup keys, most specific first",
+    "canonical": "case-folded key matched against api.name_norm after exact spellings miss"
+  },
+  "cases": [
+    {
+      "raw": "VirtualAllocEx",
+      "module": null,
+      "function": "VirtualAllocEx",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "VirtualAllocEx",
+        "VirtualAllocExA",
+        "VirtualAllocExW"
+      ],
+      "canonical": "virtualallocex"
+    },
+    {
+      "raw": "kernel32.VirtualAllocEx",
+      "module": "kernel32",
+      "function": "VirtualAllocEx",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "VirtualAllocEx",
+        "VirtualAllocExA",
+        "VirtualAllocExW"
+      ],
+      "canonical": "virtualallocex"
+    },
+    {
+      "raw": "<kernel32.VirtualAllocEx>",
+      "module": "kernel32",
+      "function": "VirtualAllocEx",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "VirtualAllocEx",
+        "VirtualAllocExA",
+        "VirtualAllocExW"
+      ],
+      "canonical": "virtualallocex"
+    },
+    {
+      "raw": "KERNELBASE.VirtualAllocEx",
+      "module": "kernel32",
+      "function": "VirtualAllocEx",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "VirtualAllocEx",
+        "VirtualAllocExA",
+        "VirtualAllocExW"
+      ],
+      "canonical": "virtualallocex"
+    },
+    {
+      "raw": "call qword ptr ds:[<&kernel32.VirtualAllocEx>]",
+      "module": "kernel32",
+      "function": "VirtualAllocEx",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "VirtualAllocEx",
+        "VirtualAllocExA",
+        "VirtualAllocExW"
+      ],
+      "canonical": "virtualallocex"
+    },
+    {
+      "raw": "qword ptr ds:[<&CreateProcessW>]",
+      "module": null,
+      "function": "CreateProcessW",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "CreateProcessW",
+        "CreateProcess",
+        "CreateProcessA"
+      ],
+      "canonical": "createprocess"
+    },
+    {
+      "raw": "JMP.&GetProcAddress",
+      "module": null,
+      "function": "GetProcAddress",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "GetProcAddress",
+        "GetProcAddressA",
+        "GetProcAddressW"
+      ],
+      "canonical": "getprocaddress"
+    },
+    {
+      "raw": "__imp_CreateProcessW",
+      "module": null,
+      "function": "CreateProcessW",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "CreateProcessW",
+        "CreateProcess",
+        "CreateProcessA"
+      ],
+      "canonical": "createprocess"
+    },
+    {
+      "raw": "_VirtualAllocEx@20",
+      "module": null,
+      "function": "VirtualAllocEx",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "VirtualAllocEx",
+        "VirtualAllocExA",
+        "VirtualAllocExW"
+      ],
+      "canonical": "virtualallocex"
+    },
+    {
+      "raw": "kernel32.#123",
+      "module": "kernel32",
+      "function": "",
+      "ordinal": 123,
+      "is_apiset": false,
+      "keys": [],
+      "canonical": ""
+    },
+    {
+      "raw": "#42",
+      "module": null,
+      "function": "",
+      "ordinal": 42,
+      "is_apiset": false,
+      "keys": [],
+      "canonical": ""
+    },
+    {
+      "raw": "kernel32.dll",
+      "module": "kernel32",
+      "function": "",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [],
+      "canonical": ""
+    },
+    {
+      "raw": "",
+      "module": null,
+      "function": "",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [],
+      "canonical": ""
+    },
+    {
+      "raw": "   ",
+      "module": null,
+      "function": "",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [],
+      "canonical": ""
+    },
+    {
+      "raw": "api-ms-win-core-processthreads-l1-1-0.CreateProcessW",
+      "module": null,
+      "function": "CreateProcessW",
+      "ordinal": null,
+      "is_apiset": true,
+      "keys": [
+        "CreateProcessW",
+        "CreateProcess",
+        "CreateProcessA"
+      ],
+      "canonical": "createprocess"
+    },
+    {
+      "raw": "ext-ms-win-ntuser-window-l1-1-0.ShowWindow",
+      "module": null,
+      "function": "ShowWindow",
+      "ordinal": null,
+      "is_apiset": true,
+      "keys": [
+        "ShowWindow",
+        "ShowWindowA",
+        "ShowWindowW"
+      ],
+      "canonical": "showwindow"
+    },
+    {
+      "raw": "ZwOpenProcess",
+      "module": null,
+      "function": "ZwOpenProcess",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "ZwOpenProcess",
+        "NtOpenProcess"
+      ],
+      "canonical": "ntopenprocess"
+    },
+    {
+      "raw": "NtOpenProcess",
+      "module": null,
+      "function": "NtOpenProcess",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "NtOpenProcess"
+      ],
+      "canonical": "ntopenprocess"
+    },
+    {
+      "raw": "NtCreateThreadEx",
+      "module": null,
+      "function": "NtCreateThreadEx",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "NtCreateThreadEx"
+      ],
+      "canonical": "ntcreatethreadex"
+    },
+    {
+      "raw": "RtlMoveMemory",
+      "module": null,
+      "function": "RtlMoveMemory",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "RtlMoveMemory"
+      ],
+      "canonical": "rtlmovememory"
+    },
+    {
+      "raw": "LdrLoadDll",
+      "module": null,
+      "function": "LdrLoadDll",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "LdrLoadDll"
+      ],
+      "canonical": "ldrloaddll"
+    },
+    {
+      "raw": "FindFirstFileA",
+      "module": null,
+      "function": "FindFirstFileA",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "FindFirstFileA",
+        "FindFirstFile",
+        "FindFirstFileW"
+      ],
+      "canonical": "findfirstfile"
+    },
+    {
+      "raw": "FindFirstFileW",
+      "module": null,
+      "function": "FindFirstFileW",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "FindFirstFileW",
+        "FindFirstFile",
+        "FindFirstFileA"
+      ],
+      "canonical": "findfirstfile"
+    },
+    {
+      "raw": "CreateProcess",
+      "module": null,
+      "function": "CreateProcess",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "CreateProcess",
+        "CreateProcessA",
+        "CreateProcessW"
+      ],
+      "canonical": "createprocess"
+    },
+    {
+      "raw": "CopyFileExW",
+      "module": null,
+      "function": "CopyFileExW",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "CopyFileExW",
+        "CopyFileEx",
+        "CopyFileExA"
+      ],
+      "canonical": "copyfileex"
+    },
+    {
+      "raw": "GetVersionExA",
+      "module": null,
+      "function": "GetVersionExA",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "GetVersionExA",
+        "GetVersionEx",
+        "GetVersionExW"
+      ],
+      "canonical": "getversionex"
+    },
+    {
+      "raw": "VirtualAlloc",
+      "module": null,
+      "function": "VirtualAlloc",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "VirtualAlloc",
+        "VirtualAllocA",
+        "VirtualAllocW"
+      ],
+      "canonical": "virtualalloc"
+    },
+    {
+      "raw": "WSASocketA",
+      "module": null,
+      "function": "WSASocketA",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "WSASocketA",
+        "WSASocket",
+        "WSASocketW"
+      ],
+      "canonical": "wsasocket"
+    },
+    {
+      "raw": "ws2_32.WSASocketA",
+      "module": "ws2_32",
+      "function": "WSASocketA",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "WSASocketA",
+        "WSASocket",
+        "WSASocketW"
+      ],
+      "canonical": "wsasocket"
+    },
+    {
+      "raw": "user32.MessageBoxW",
+      "module": "user32",
+      "function": "MessageBoxW",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "MessageBoxW",
+        "MessageBox",
+        "MessageBoxA"
+      ],
+      "canonical": "messagebox"
+    },
+    {
+      "raw": "ShowWindow",
+      "module": null,
+      "function": "ShowWindow",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "ShowWindow",
+        "ShowWindowA",
+        "ShowWindowW"
+      ],
+      "canonical": "showwindow"
+    },
+    {
+      "raw": "DnsQuery_A",
+      "module": null,
+      "function": "DnsQuery_A",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "DnsQuery_A",
+        "DnsQuery",
+        "DnsQueryA",
+        "DnsQueryW"
+      ],
+      "canonical": "dnsquery"
+    },
+    {
+      "raw": "DnsQuery_W",
+      "module": null,
+      "function": "DnsQuery_W",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "DnsQuery_W",
+        "DnsQuery",
+        "DnsQueryA",
+        "DnsQueryW"
+      ],
+      "canonical": "dnsquery"
+    },
+    {
+      "raw": "dnsapi.DnsQuery_W",
+      "module": "dnsapi",
+      "function": "DnsQuery_W",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "DnsQuery_W",
+        "DnsQuery",
+        "DnsQueryA",
+        "DnsQueryW"
+      ],
+      "canonical": "dnsquery"
+    },
+    {
+      "raw": "ws2_32.socket",
+      "module": "ws2_32",
+      "function": "socket",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "socket",
+        "socketA",
+        "socketW"
+      ],
+      "canonical": "socket"
+    },
+    {
+      "raw": "Socket",
+      "module": null,
+      "function": "Socket",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "Socket",
+        "SocketA",
+        "SocketW"
+      ],
+      "canonical": "socket"
+    },
+    {
+      "raw": "GetKeyNameTextA",
+      "module": null,
+      "function": "GetKeyNameTextA",
+      "ordinal": null,
+      "is_apiset": false,
+      "keys": [
+        "GetKeyNameTextA",
+        "GetKeyNameText",
+        "GetKeyNameTextW"
+      ],
+      "canonical": "getkeynametext"
+    }
+  ]
+}

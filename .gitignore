@@ -1,0 +1,36 @@
+# Shallow source checkouts for the ETL, ~650 MB. Cloned on demand, never committed.
+vendor/
+
+# Build trees
+build/
+build32/
+build64/
+buildtest/
+.vs/
+CMakeUserPresets.json
+
+# Build output. The index is ~47 GitHub-unfriendly megabytes and is published
+# as a release asset instead -- see package.ps1. Committing it would put a copy
+# in history for every rebuild, permanently.
+dist/
+*.db
+*.db-journal
+*.db-wal
+
+# Plugin binaries
+*.dp32
+*.dp64
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editors / OS
+.idea/
+.vscode/
+*.user
+Thumbs.db
+desktop.ini
