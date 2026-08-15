@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(APISignature VERSION 0.1.0 LANGUAGES C CXX)
+project(APISignature VERSION 0.2.0 LANGUAGES C CXX)
 
 # x64dbg plugins are plain DLLs with an architecture-specific extension. One
 # configure/build per architecture: x64 produces .dp64, x86 produces .dp32.
